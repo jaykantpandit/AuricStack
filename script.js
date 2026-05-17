@@ -44,7 +44,7 @@ function updateActiveNav() {
 
 /* ── SCROLL REVEAL ─────────────────────────────────────── */
 const reveals = document.querySelectorAll(
-  '.service-card, .portfolio-card, .testi-card, .value-item, .contact-item, .about-img-wrap, .about-content'
+  '.service-card, .why-card, .testi-card, .value-item, .contact-item, .about-img-wrap, .about-content'
 );
 
 reveals.forEach(el => el.classList.add('reveal'));
@@ -60,31 +60,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => revealObserver.observe(el));
 
-/* ── PORTFOLIO FILTER ──────────────────────────────────── */
-const filterBtns   = document.querySelectorAll('.filter-btn');
-const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const filter = btn.dataset.filter;
-    portfolioCards.forEach(card => {
-      const match = filter === 'all' || card.dataset.cat === filter;
-      card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-      if (match) {
-        card.classList.remove('hidden');
-        card.style.opacity   = '1';
-        card.style.transform = 'scale(1)';
-      } else {
-        card.style.opacity   = '0';
-        card.style.transform = 'scale(0.92)';
-        setTimeout(() => card.classList.add('hidden'), 300);
-      }
-    });
-  });
-});
 
 /* ── CONTACT FORM ──────────────────────────────────────── */
 const form    = document.getElementById('contactForm');

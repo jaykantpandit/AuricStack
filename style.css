@@ -555,105 +555,65 @@ ul { list-style: none; }
 .service-link:hover { gap: 10px; }
 
 /* ── PORTFOLIO ───────────────────────────────────────────── */
-.portfolio { background: var(--dark-2); }
+/* ── WHY CHOOSE US ───────────────────────────────────────── */
+.why-us { background: var(--dark-2); }
 
-.portfolio-filter {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-.filter-btn {
-  padding: 9px 22px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border-radius: 100px;
-  border: 1.5px solid var(--border);
-  background: transparent;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: var(--transition);
-}
-.filter-btn:hover, .filter-btn.active {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
-  border-color: transparent;
-  color: #0A0D14;
-}
-
-.portfolio-grid {
+.why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 24px;
-}
-
-.portfolio-card {
-  background: var(--dark-3);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
+}
+
+.why-card {
+  padding: 40px 32px;
+  border-right: 1px solid var(--border);
+  position: relative;
   transition: var(--transition);
 }
-.portfolio-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow);
-  border-color: rgba(212,175,55,0.25);
-}
-.portfolio-card.hidden { display: none; }
+.why-card:last-child { border-right: none; }
 
-.pcard-visual {
-  height: 160px;
-  background: linear-gradient(135deg, var(--c1), var(--c2));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.pcard-visual::after {
+.why-card::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 60%);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold-dark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
 }
-.pcard-icon { font-size: 3.5rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+.why-card:hover { background: var(--dark-3); }
+.why-card:hover::after { transform: scaleX(1); }
 
-.pcard-body { padding: 22px 24px 26px; }
-.pcard-tag {
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 8px;
-}
-.pcard-body h3 {
+.why-card-num {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+.why-card:hover .why-card-num { opacity: 0.6; }
+
+.why-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.08rem;
   font-weight: 700;
   color: var(--white);
-  margin-bottom: 8px;
+  margin-bottom: 14px;
+  line-height: 1.4;
 }
-.pcard-body p {
-  font-size: 0.87rem;
+.why-card p {
+  font-size: 0.875rem;
   color: var(--text-muted);
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-.pcard-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-.pcard-stack span {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  background: var(--dark-4);
-  border: 1px solid var(--border);
-  padding: 3px 10px;
-  border-radius: 100px;
+  line-height: 1.8;
 }
 
 /* ── TESTIMONIALS ────────────────────────────────────────── */
@@ -899,7 +859,10 @@ ul { list-style: none; }
   .nav-links.open .nav-cta-mobile { display: block; margin-top: 12px; }
   .hero-visual { display: none; }
   .form-row { grid-template-columns: 1fr; }
-  .portfolio-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .why-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .why-card:nth-child(2n) { border-right: none; }
+  .why-card:nth-last-child(-n+2) { border-bottom: none; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .testi-grid { grid-template-columns: 1fr; }
   .testi-card.featured { transform: none; }

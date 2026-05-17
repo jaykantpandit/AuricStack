@@ -1,0 +1,69 @@
+# Environment & Secrets
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.npm
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# IDE & Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+log/
+
+# Build Output
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# Testing
+coverage/
+.nyc_output/
+.pytest_cache/
+
+# Miscellaneous
+*.tmp
+*.temp
+*.bak
+*.cache
+.sass-cache/

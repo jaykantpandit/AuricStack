@@ -164,9 +164,33 @@ ul { list-style: none; }
 }
 .logo strong { color: var(--gold); }
 .logo-img {
-  height: 56px;
+  height: 48px;
   width: auto;
   object-fit: contain;
+}
+.logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 3px;
+}
+.logo-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.logo-name span { color: var(--gold); }
+.logo-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  width: 100%;
+  text-align: justify;
+  text-align-last: justify;
 }
 .logo-icon {
   font-size: 1.6rem;
@@ -427,34 +451,47 @@ ul { list-style: none; }
 .hero-card:nth-child(2) { bottom: 18%; left: -10%; }
 .hero-card:nth-child(3) { top: 20%;  right: -5%; }
 .hero-card:nth-child(4) { bottom: 12%; right: -5%; }
-.hcard-icon {
-  font-size: 1.4rem;
-  width: 42px; height: 42px;
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
+.hcard-icon { font-size: 1.5rem; }
 
-/* per-card icon accent colors */
+/* per-card: colored border + matching icon filter — no icon container */
+.hero-card:nth-child(1),
+.hero-cards-row .hero-card:nth-child(1) {
+  border-color: rgba(99,102,241,0.5);
+  box-shadow: 0 4px 24px rgba(99,102,241,0.15);
+}
 .hero-card:nth-child(1) .hcard-icon,
 .hero-cards-row .hero-card:nth-child(1) .hcard-icon {
-  background: rgba(99,102,241,0.15);
-  border: 1px solid rgba(99,102,241,0.35);
+  filter: sepia(1) saturate(6) hue-rotate(225deg);
+}
+
+.hero-card:nth-child(2),
+.hero-cards-row .hero-card:nth-child(2) {
+  border-color: rgba(59,130,246,0.5);
+  box-shadow: 0 4px 24px rgba(59,130,246,0.15);
 }
 .hero-card:nth-child(2) .hcard-icon,
 .hero-cards-row .hero-card:nth-child(2) .hcard-icon {
-  background: rgba(59,130,246,0.15);
-  border: 1px solid rgba(59,130,246,0.35);
+  filter: sepia(1) saturate(6) hue-rotate(185deg);
+}
+
+.hero-card:nth-child(3),
+.hero-cards-row .hero-card:nth-child(3) {
+  border-color: rgba(16,185,129,0.5);
+  box-shadow: 0 4px 24px rgba(16,185,129,0.15);
 }
 .hero-card:nth-child(3) .hcard-icon,
 .hero-cards-row .hero-card:nth-child(3) .hcard-icon {
-  background: rgba(16,185,129,0.15);
-  border: 1px solid rgba(16,185,129,0.35);
+  filter: sepia(1) saturate(12) hue-rotate(100deg) brightness(1.2);
+}
+
+.hero-card:nth-child(4),
+.hero-cards-row .hero-card:nth-child(4) {
+  border-color: rgba(212,175,55,0.5);
+  box-shadow: 0 4px 24px rgba(212,175,55,0.15);
 }
 .hero-card:nth-child(4) .hcard-icon,
 .hero-cards-row .hero-card:nth-child(4) .hcard-icon {
-  background: rgba(212,175,55,0.15);
-  border: 1px solid rgba(212,175,55,0.35);
+  filter: sepia(1) saturate(4) hue-rotate(10deg);
 }
 
 .hero-card strong { display: block; font-size: 0.88rem; color: var(--white); }

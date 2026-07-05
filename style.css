@@ -223,7 +223,7 @@ ul { list-style: none; }
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 120px 0 80px;
+  padding: 88px 0 60px;
 }
 
 .hero-bg {
@@ -267,7 +267,7 @@ ul { list-style: none; }
   position: relative;
   z-index: 2;
   max-width: 580px;
-  padding: 40px 0;
+  padding: 20px 0;
   flex: 1;
 }
 
@@ -288,7 +288,7 @@ ul { list-style: none; }
 
 .hero-title {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
   font-weight: 800;
   line-height: 1.12;
   color: var(--white);
@@ -348,12 +348,55 @@ ul { list-style: none; }
 .globe-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1.5px solid rgba(212,175,55,0.3);
+  border: 1.5px solid rgba(212,175,55,0.25);
   animation: spin linear infinite;
 }
-.r1 { width: 220px; height: 220px; animation-duration: 18s; border-style: dashed; }
-.r2 { width: 160px; height: 160px; animation-duration: 12s; animation-direction: reverse; }
-.r3 { width: 100px; height: 100px; animation-duration: 8s; }
+
+/* orbital dot — anchored to top-centre of each ring */
+.globe-ring::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+}
+
+.r1 {
+  width: 220px; height: 220px;
+  animation-duration: 18s;
+  border-style: dashed;
+}
+.r1::after {
+  width: 9px; height: 9px;
+  top: -4.5px;                       /* half dot height so centre sits on ring line */
+  margin-left: -4.5px;               /* half dot width to centre horizontally */
+  background: var(--gold-light);
+  box-shadow: 0 0 10px 3px rgba(245,197,24,0.7);
+}
+
+.r2 {
+  width: 160px; height: 160px;
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+.r2::after {
+  width: 7px; height: 7px;
+  top: -3.5px;
+  margin-left: -3.5px;
+  background: var(--gold);
+  box-shadow: 0 0 8px 2px rgba(212,175,55,0.6);
+}
+
+.r3 {
+  width: 100px; height: 100px;
+  animation-duration: 8s;
+}
+.r3::after {
+  width: 5px; height: 5px;
+  top: -2.5px;
+  margin-left: -2.5px;
+  background: var(--gold-dark);
+  box-shadow: 0 0 6px 2px rgba(168,139,34,0.7);
+}
 .globe-core {
   width: 72px; height: 72px;
   background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
@@ -380,16 +423,47 @@ ul { list-style: none; }
   min-width: 170px;
   box-shadow: var(--shadow);
 }
-.hero-card:nth-child(1) { top: 10%; left: 0; }
+.hero-card:nth-child(1) { top: 8%;   left: 0; }
 .hero-card:nth-child(2) { bottom: 18%; left: -10%; }
-.hero-card:nth-child(3) { top: 22%; right: -5%; }
-.hcard-icon { font-size: 1.5rem; }
+.hero-card:nth-child(3) { top: 20%;  right: -5%; }
+.hero-card:nth-child(4) { bottom: 12%; right: -5%; }
+.hcard-icon {
+  font-size: 1.4rem;
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* per-card icon accent colors */
+.hero-card:nth-child(1) .hcard-icon,
+.hero-cards-row .hero-card:nth-child(1) .hcard-icon {
+  background: rgba(99,102,241,0.15);
+  border: 1px solid rgba(99,102,241,0.35);
+}
+.hero-card:nth-child(2) .hcard-icon,
+.hero-cards-row .hero-card:nth-child(2) .hcard-icon {
+  background: rgba(59,130,246,0.15);
+  border: 1px solid rgba(59,130,246,0.35);
+}
+.hero-card:nth-child(3) .hcard-icon,
+.hero-cards-row .hero-card:nth-child(3) .hcard-icon {
+  background: rgba(16,185,129,0.15);
+  border: 1px solid rgba(16,185,129,0.35);
+}
+.hero-card:nth-child(4) .hcard-icon,
+.hero-cards-row .hero-card:nth-child(4) .hcard-icon {
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.35);
+}
+
 .hero-card strong { display: block; font-size: 0.88rem; color: var(--white); }
 .hero-card p { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
 
 .card-float { animation: float 5s ease-in-out infinite; }
 .delay1 { animation-delay: -1.5s; }
 .delay2 { animation-delay: -3s; }
+.delay3 { animation-delay: -4.5s; }
 
 /* mobile-only cards row hidden on desktop */
 .hero-cards-row { display: none; }

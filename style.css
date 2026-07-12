@@ -1299,8 +1299,8 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-  .highlights-inner { flex-wrap: wrap; }
-  .hl-item { flex: 1 1 45%; padding: 18px 16px; }
+  .highlights-inner { flex-direction: column; }
+  .hl-item { padding: 18px 16px; }
   .hl-divider { display: none; }
 
   .section { padding: 70px 0; }

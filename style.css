@@ -508,6 +508,8 @@ ul { list-style: none; }
   padding: 0 calc((100% - min(1200px, 92%)) / 2) 24px;
 }
 
+.hero-actions-bottom { display: none; }
+
 .highlights-inner {
   display: flex;
   align-items: stretch;
@@ -1252,8 +1254,9 @@ ul { list-style: none; }
   }
   .hero-highlights { position: static; padding: 0 32px 40px; }
   .hero-content { max-width: 640px; margin: 0 auto; }
-  .hero-actions { justify-content: center; }
+  .hero-content .hero-actions { display: none; }
   .hero-subtitle { margin-inline: auto; max-width: 520px; }
+  .hero-actions-bottom { display: flex; justify-content: center; padding: 0 32px 32px; }
 
   /* visual: constrained width so cards cluster around the globe */
   .hero-visual {
@@ -1286,7 +1289,16 @@ ul { list-style: none; }
   .hero { padding: 88px 20px 16px; gap: 16px; }
   .hero-highlights { padding: 0 20px 16px; }
   .hero-content { max-width: 100%; }
-  .hero-visual { max-width: 100%; min-height: auto; flex-direction: column; gap: 20px; }
+  .hero-actions-bottom { padding: 0 20px 24px; }
+  /* visual: column — globe with corner icons above, cards row below */
+  .hero-visual {
+    width: 100%;
+    max-width: 340px;
+    min-height: auto;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+  }
 
   /* globe — phone size */
   .hero-globe { width: 160px; height: 160px; }
@@ -1295,10 +1307,30 @@ ul { list-style: none; }
   .r3 { width: 72px;  height: 72px;  }
   .globe-core { width: 38px; height: 38px; }
 
-  /* switch to grid cards on phone */
-  .card-float { display: none; }
-  .hero-cards-row { display: grid; max-width: 380px; gap: 10px; }
-  .hero-cards-row .hero-card { padding: 12px 14px; }
+  /* compact corner floating cards — pixel positions targeting the globe zone */
+  .card-float {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+    width: 68px;
+    padding: 8px 6px;
+    gap: 3px;
+  }
+  .card-float p { display: none; }
+  .card-float strong { font-size: 0.6rem; white-space: nowrap; }
+  .card-float .hcard-icon { width: 26px; height: 26px; }
+  .card-float .hcard-icon svg { width: 18px; height: 18px; }
+
+  .hero-card:nth-child(1) { top: 5px;   left: 5px;  bottom: auto; right: auto; }
+  .hero-card:nth-child(2) { top: 5px;   right: 5px; bottom: auto; left: auto;  }
+  .hero-card:nth-child(3) { top: 100px; left: 5px;  bottom: auto; right: auto; }
+  .hero-card:nth-child(4) { top: 100px; right: 5px; bottom: auto; left: auto;  }
+
+  /* restore cards row as single-column list below the globe */
+  .hero-cards-row { display: grid; grid-template-columns: 1fr; max-width: 100%; gap: 8px; }
+  .hero-cards-row .hero-card { flex-direction: row; align-items: center; gap: 12px; padding: 12px 14px; }
 }
 
 @media (max-width: 768px) {

@@ -870,6 +870,7 @@ ul { list-style: none; }
 
 /* CTA row: primary button + text link */
 .about-cta { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.about-cta-mobile { display: none; }
 .btn-text-link {
   color: var(--text-muted);
   font-size: 0.92rem;
@@ -1279,9 +1280,13 @@ ul { list-style: none; }
   .card-float { display: flex; }
   .hero-cards-row { display: none; }
 
-  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-grid { grid-template-columns: 1fr; gap: 20px; }
+  .about-values { margin-bottom: 0; }
+  .about-desc { margin-bottom: 12px; }
   .about-visual { order: 2; }
   .about-content { order: 1; }
+  .about-cta-mobile { display: flex; order: 3; }
+  .about-content .about-cta { display: none; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
 }

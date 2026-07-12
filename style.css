@@ -401,16 +401,19 @@ ul { list-style: none; }
   box-shadow: 0 0 6px 2px rgba(168,139,34,0.7);
 }
 .globe-core {
-  width: 72px; height: 72px;
-  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+  width: 50px; height: 50px;
+  background: transparent;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: #0A0D14;
-  box-shadow: 0 0 30px rgba(212,175,55,0.5);
+  box-shadow: none;
   z-index: 1;
+  overflow: hidden;
+}
+.globe-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .hero-card {
@@ -1265,7 +1268,7 @@ ul { list-style: none; }
   .r1 { width: 200px; height: 200px; }
   .r2 { width: 144px; height: 144px; }
   .r3 { width: 90px;  height: 90px;  }
-  .globe-core { width: 64px; height: 64px; font-size: 1rem; }
+  .globe-core { width: 44px; height: 44px; }
 
   /* keep floating cards — do NOT show grid row */
   .card-float { display: flex; }
@@ -1290,7 +1293,7 @@ ul { list-style: none; }
   .r1 { width: 160px; height: 160px; }
   .r2 { width: 116px; height: 116px; }
   .r3 { width: 72px;  height: 72px;  }
-  .globe-core { width: 52px; height: 52px; font-size: 0.85rem; }
+  .globe-core { width: 38px; height: 38px; }
 
   /* switch to grid cards on phone */
   .card-float { display: none; }

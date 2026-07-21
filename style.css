@@ -1107,21 +1107,40 @@ ul { list-style: none; }
 .contact-info .section-title { margin-bottom: 14px; }
 .contact-info > p { color: var(--text-muted); margin-bottom: 36px; }
 
-.contact-details { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+.contact-reassurance { color: var(--text-muted); margin-bottom: 40px; font-size: 0.95rem; }
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.contact-left { display: flex; flex-direction: column; gap: 16px; }
+.contact-left .contact-item { flex: 1; }
+.contact-map { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; }
+.contact-map iframe { flex: 1; display: block; min-height: 0; }
+.open-maps-btn {
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px 20px; background: var(--dark-3);
+  color: var(--gold); font-size: 0.88rem; font-weight: 600;
+  border-top: 1px solid var(--border); transition: var(--transition);
+  text-decoration: none;
+}
+.open-maps-btn:hover { background: var(--dark-4); color: var(--gold-light); }
 .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 16px 18px;
+  padding: 18px 20px;
   background: var(--dark-3);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: var(--transition);
 }
 .contact-item:hover { border-color: rgba(212,175,55,0.35); }
-.contact-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
-.contact-item strong { display: block; font-size: 0.82rem; color: var(--gold); margin-bottom: 2px; }
-.contact-item span { font-size: 0.88rem; color: var(--text-muted); }
+.contact-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.contact-item strong { display: block; font-size: 0.82rem; color: var(--gold); margin-bottom: 6px; }
+.contact-item span { display: block; font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+.contact-hours { margin-top: 8px; color: var(--text) !important; font-weight: 500; font-size: 0.84rem !important; }
 
 .social-links { display: flex; gap: 12px; }
 .social-btn {
@@ -1306,6 +1325,8 @@ ul { list-style: none; }
   .about-cta-mobile { display: flex; order: 3; gap: 0; margin-bottom: 0; padding-bottom: 0; }
   .about-content .about-cta { display: none; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-map iframe { min-height: 260px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
 }
 

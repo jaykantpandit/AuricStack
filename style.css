@@ -412,10 +412,9 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .globe-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
 }
 
 .hero-card {
